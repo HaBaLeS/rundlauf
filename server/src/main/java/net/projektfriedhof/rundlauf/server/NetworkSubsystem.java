@@ -2,6 +2,9 @@ package net.projektfriedhof.rundlauf.server;
 
 import java.io.IOException;
 
+import net.projektfriedhof.rundlauf.messages.ClientState;
+import net.projektfriedhof.rundlauf.messages.CommandType;
+
 import com.esotericsoftware.kryonet.Server;
 
 public class NetworkSubsystem {
@@ -10,6 +13,10 @@ public class NetworkSubsystem {
 	
 	public void startUp() {
 		server = new Server();
+		registerClasses();
+		
+		registerListeners();
+		
 		server.start();
 		try {
 			server.bind(54555, 54777);
@@ -19,6 +26,17 @@ public class NetworkSubsystem {
 	}
 
 	
+	private void registerListeners() {
+		server.addListener(new ClientStateListener());
+	}
+
+
+	private void registerClasses() {
+		server.getKryo().register(ClientState.class);
+		server.getKryo().register(CommandType.class);
+	}
+
+
 	public void shutdown(){
 		server.stop();
 	}

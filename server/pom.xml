@@ -52,6 +52,11 @@
 			<artifactId>kryonet</artifactId>
 			<version>${kryonet.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>net.projektfriedhof.rundlauf</groupId>
+			<artifactId>shared</artifactId>
+			<version>0.1</version>
+		</dependency>
 	</dependencies>
 
 
