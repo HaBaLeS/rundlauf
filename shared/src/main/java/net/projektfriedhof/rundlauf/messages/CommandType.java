@@ -2,6 +2,7 @@ package net.projektfriedhof.rundlauf.messages;
 
 public enum CommandType {
 	
-	client_register_request //Client wants to register itself at the server
+	client_register_request, //Client wants to register itself at the server
+	log_message
 
 }

@@ -13,11 +13,16 @@ public class StartRenderer {
 	
 	Client client = new Client();
 	
+	private boolean isRunning = true;
+	
 	public static void main(String[] args) {
-		new StartRenderer().run();
+		
+		int screenNum = Integer.parseInt(args[0]);
+		
+		new StartRenderer().run(screenNum);
 	}
 
-	private void run() {
+	private void run(Integer screenNum) {
 		
 		initSubsystems();
 		
@@ -38,8 +43,17 @@ public class StartRenderer {
 		
 		ClientState register = new ClientState();
 		register.setCmdType(CommandType.client_register_request);
+		register.setScreenNum(screenNum);
 		client.sendTCP(register);
 		
+		while(isRunning){
+			try {
+				Thread.sleep(20);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
 		
 	}

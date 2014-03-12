@@ -7,15 +7,15 @@ package net.projektfriedhof.rundlauf.messages;
  */
 public class ClientState {
 
-	private int num;
+	private int screenNum;
 	private CommandType cmdType;
 	private String data;
 	
-	public int getNum() {
-		return num;
+	public int getScreenNum() {
+		return screenNum;
 	}
-	public void setNum(int num) {
-		this.num = num;
+	public void setScreenNum(int screenNum) {
+		this.screenNum = screenNum;
 	}
 	public CommandType getCmdType() {
 		return cmdType;

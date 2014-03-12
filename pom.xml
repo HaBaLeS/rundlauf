@@ -22,5 +22,13 @@
 
 	<dependencies>
 	</dependencies>
+	
+	<repositories>
+		<repository>
+			<id>private_repo</id>
+			<url>http://habales.de/maven</url>
+		</repository>
+	</repositories>
+
 </project>
 
